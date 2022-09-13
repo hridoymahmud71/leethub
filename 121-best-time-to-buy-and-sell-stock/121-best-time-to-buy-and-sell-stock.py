@@ -9,7 +9,7 @@ class Solution:
                 buyPrice = prices[i]
 
         
-            if (prices[i] - buyPrice) > globalMax :
+            elif (prices[i] - buyPrice) > globalMax :
                 globalMax = prices[i] - buyPrice
 
         return globalMax
