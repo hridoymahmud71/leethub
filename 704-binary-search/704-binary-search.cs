@@ -5,7 +5,7 @@ public class Solution {
         int maxIndex = nums.Length - 1;
         
         while(minIndex <= maxIndex) {
-            int midIndex = (minIndex + maxIndex) / 2 ;
+            int midIndex = minIndex +  ((maxIndex - minIndex) / 2) ;
             
             if(target == nums[midIndex]){
                 return midIndex;
