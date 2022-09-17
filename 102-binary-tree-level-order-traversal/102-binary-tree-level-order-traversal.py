@@ -7,15 +7,16 @@
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
 
-        output  = []
+        output  = {}
         def traverse(current,level):
             if current == None :
                 return
-            
-            try:
+
+            if level in output.keys():
                 output[level].append(current.val)
-            except IndexError:
-                output.append([current.val]) 
+
+            else :
+                output[level] = [current.val]
 
             level += 1
 
@@ -25,6 +26,12 @@ class Solution:
 
 
         traverse(root,0)
+        
+        result  = []
+        
+        for i in output:
+            result.append(output[i])
+            
 
-        return output
+        return result
             
