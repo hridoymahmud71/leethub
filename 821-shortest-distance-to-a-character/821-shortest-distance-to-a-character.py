@@ -10,7 +10,7 @@ class Solution:
                 pos.append(i)
                 
         for i in range(len(s)):
-            mymin = 10000000000000000000
+            mymin = math.inf
             
             for j,val in enumerate(pos):
                 myabs = abs(val - i)
