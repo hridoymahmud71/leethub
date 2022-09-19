@@ -24,6 +24,5 @@ class Solution:
         
 
         chars[:] = result
-
-        print(chars)
+        
         return len(chars)  
