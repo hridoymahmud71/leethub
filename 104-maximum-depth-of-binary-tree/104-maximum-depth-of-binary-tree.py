@@ -9,19 +9,14 @@ class Solution:
         if root == None:
             return 0
 
-        globalMax = 0
 
         def dfsTrasverse(current,level):
             if current == None :
-                return
+                return level
             level += 1
-            nonlocal globalMax
-            globalMax = max(level,globalMax)
-            dfsTrasverse(current.left,level)
-            dfsTrasverse(current.right,level)
+            
+            return max(dfsTrasverse(current.left,level),dfsTrasverse(current.right,level)) 
+            
 
         
-        dfsTrasverse(root,0)
-
-        
-        return globalMax
+        return dfsTrasverse(root,0)
