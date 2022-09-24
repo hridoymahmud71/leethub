@@ -1,11 +1,11 @@
 class Solution:
     def minPathSum(self, grid: List[List[int]]) -> int:
+        # -----start-----
+        # recursive way with memo
+
         m = len(grid) - 1
         n = len(grid[0]) - 1
         memo = {}
-
-        # -----start-----
-        # recursive way with memo
 
         def dfsTraverse(m, n, memo):
 
