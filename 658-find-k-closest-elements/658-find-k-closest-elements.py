@@ -12,8 +12,7 @@ class Solution:
                 high -= 1
             else:
                 low += 1
-
-        print(low,high)
+        
         output = arr[low:high + 1]
 
         return output
