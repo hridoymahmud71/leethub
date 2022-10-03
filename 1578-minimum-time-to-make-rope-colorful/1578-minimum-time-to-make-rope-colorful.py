@@ -1,23 +1,12 @@
 class Solution:
     def minCost(self, colors: str, neededTime: List[int]) -> int:
         
-        time = 0
+        result = 0
+        for i in range(1,len(colors)):        
+            if colors[i] == colors[i - 1]: 
+                result += min(neededTime[i], neededTime[i - 1]) 
+                neededTime[i] = max(neededTime[i], neededTime[i - 1])           
         
-        i = 0
-        while i < len(colors) :
-            
-            currentColor = colors[i]
-            highestCostOfRemoval = neededTime[i]
-            nextIndex  = i + 1
-            
-            while nextIndex < len(colors) and colors[nextIndex] == currentColor:
-                time += min(neededTime[nextIndex],highestCostOfRemoval)
-                highestCostOfRemoval = max(neededTime[nextIndex],highestCostOfRemoval)
-            
-                nextIndex += 1
-            
-            i = nextIndex
-            
-        return time
+        return result
     
             
