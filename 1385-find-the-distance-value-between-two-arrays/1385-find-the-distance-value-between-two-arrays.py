@@ -2,6 +2,7 @@ class Solution:
     def findTheDistanceValue(self, arr1: List[int], arr2: List[int], d: int) -> int:
         
         counter = 0
+        arr2.sort()
 
         for i in range(len(arr1)):
             isValid = True
